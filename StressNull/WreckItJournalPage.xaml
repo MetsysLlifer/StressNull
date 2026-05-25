@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StressNull.WreckItJournalPage"
+             Title="Wreck-It Journal"
+             BackgroundColor="#222222">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        
+        <Label Text="Wreck-It Journal"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="#EEEEEE"
+               HorizontalOptions="Center"
+               Grid.Row="0"
+               Margin="0,20,0,10" />
+
+        <Label Text="(Wipes clean every 24 hours. Destroy your thoughts here.)"
+               FontSize="14"
+               TextColor="#AAAAAA"
+               HorizontalOptions="Center"
+               Grid.Row="0"
+               Margin="0,55,0,10" />
+
+        <Editor x:Name="JournalEditor"
+                Grid.Row="1"
+                Margin="20"
+                BackgroundColor="#333333"
+                TextColor="#FFFFFF"
+                Placeholder="Write whatever. It won't survive tomorrow..."
+                PlaceholderColor="#777777"
+                FontSize="18"
+                TextChanged="OnJournalTextChanged" />
+
+    </Grid>
+</ContentPage>

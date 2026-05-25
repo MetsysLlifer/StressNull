@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StressNull.PandaPage"
+             Title="Panda Panic">
+
+    <Grid RowDefinitions="Auto, *, Auto" Padding="30">
+        
+        <VerticalStackLayout Grid.Row="0" Spacing="10">
+            <Label x:Name="StatusLabel" 
+                   Text="PANDA IS CALM" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" />
+            
+            <ProgressBar x:Name="StressBar" 
+                         Progress="0" 
+                         ProgressColor="Green" 
+                         HeightRequest="20" />
+            <Label Text="STRESS METER" FontSize="12" HorizontalOptions="Center" TextColor="Gray"/>
+        </VerticalStackLayout>
+
+        <ImageButton Grid.Row="1"
+                     x:Name="PandaImage"
+                     Source="meme_panda_0.svg"
+                     HeightRequest="300"
+                     WidthRequest="300"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Clicked="OnPandaClicked" />
+
+        <VerticalStackLayout Grid.Row="2" Spacing="10">
+            <Label Text="Panda is getting stressed! Tap him to calm him down before he panics!" 
+                   HorizontalTextAlignment="Center" 
+                   TextColor="Gray"/>
+            <Label x:Name="TimeLabel" 
+                   Text="SURVIVED: 0s" 
+                   FontSize="18" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" />
+        </VerticalStackLayout>
+        
+    </Grid>
+</ContentPage>

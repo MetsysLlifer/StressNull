@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StressNull.BaroquePage"
+             Title="Baroque Venting Machine">
+
+    <!-- Parchment background -->
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#F3E5AB" Offset="0.0" />
+            <GradientStop Color="#E8D399" Offset="0.5" />
+            <GradientStop Color="#D5B871" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ScrollView>
+        <Grid Padding="30" RowDefinitions="Auto,Auto,Auto" RowSpacing="30">
+            <Label Text="The Baroque Venting Machine"
+                   FontSize="28"
+                   FontFamily="Times New Roman"
+                   FontAttributes="Italic,Bold"
+                   TextColor="#4A3B22"
+                   HorizontalOptions="Center"
+                   Grid.Row="0"
+                   Margin="0,0,0,20" />
+
+            <VerticalStackLayout Spacing="20" VerticalOptions="Center" Grid.Row="1">
+                <Label x:Name="ResponseLabel"
+                       Text="Pray tell, what ails thy weary soul?"
+                       FontSize="22"
+                       FontFamily="Times New Roman"
+                       FontAttributes="Italic"
+                       TextColor="#2C1E0F"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,0,0,30" />
+
+                <!-- Ornate Border Container -->
+                <Border Stroke="#8B6914" StrokeThickness="3" BackgroundColor="#FFF8DC" Padding="15">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10,10,10,10" />
+                    </Border.StrokeShape>
+                    
+                    <Editor x:Name="VentEditor"
+                            HeightRequest="150"
+                            AutoSize="TextChanges"
+                            Placeholder="Thy Grievance..."
+                            PlaceholderColor="#A08050"
+                            TextColor="#2C1E0F"
+                            FontFamily="Times New Roman"
+                            BackgroundColor="Transparent"
+                            Completed="OnVentCompleted"
+                            TextChanged="OnVentTextChanged" />
+                </Border>
+            </VerticalStackLayout>
+
+            <Button Text="UNBURDEN THYSELF"
+                    Clicked="OnUnburdenClicked"
+                    FontSize="18"
+                    FontFamily="Times New Roman"
+                    FontAttributes="Bold"
+                    HeightRequest="60"
+                    CornerRadius="5"
+                    BackgroundColor="#8B6914"
+                    TextColor="#FFF8DC"
+                    Grid.Row="2" />
+        </Grid>
+    </ScrollView>
+</ContentPage>

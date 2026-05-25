@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StressNull.AboutPage"
+             Title="About">
+    
+    <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+        <Label Text="About StressNull"
+               FontSize="28"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+        
+        <Label Text="StressNull is your ultimate companion for quick stress relief. Whether you need to tap a cat, swipe through some brainrot memes, or just zone out, we've got you covered."
+               FontSize="16"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center" />
+
+        <Label Text="Version 1.0.0"
+               FontSize="14"
+               TextColor="Gray"
+               HorizontalOptions="Center" />
+        
+        <Label Text="Made with ♥️ by Kong2x"
+               FontSize="14"
+               TextColor="Gray"
+               HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

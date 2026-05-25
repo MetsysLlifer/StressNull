@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StressNull.PlayPage"
+             Title="Select Game">
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            
+            <Frame CornerRadius="15" HasShadow="True" Padding="15">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPopcatTapped" />
+                </Frame.GestureRecognizers>
+                <Grid ColumnDefinitions="100, *" ColumnSpacing="20">
+                    <Image Source="popcat_closed.svg" HeightRequest="80" WidthRequest="80" />
+                    <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                        <Label Text="Popcat" FontSize="20" FontAttributes="Bold" />
+                        <Label Text="Tap the cat to relieve some stress. Endless fun!" FontSize="14" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+
+            <Frame CornerRadius="15" HasShadow="True" Padding="15">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBrainrotTapped" />
+                </Frame.GestureRecognizers>
+                <Grid ColumnDefinitions="100, *" ColumnSpacing="20">
+                    <Image Source="meme_monkey.svg" HeightRequest="80" WidthRequest="80" />
+                    <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                        <Label Text="Brainrot Swipe" FontSize="20" FontAttributes="Bold" />
+                        <Label Text="Infinite memes for infinite dopamine." FontSize="14" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+
+            <Frame CornerRadius="15" HasShadow="True" Padding="15">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPandaTapped" />
+                </Frame.GestureRecognizers>
+                <Grid ColumnDefinitions="100, *" ColumnSpacing="20">
+                    <Image Source="meme_panda.svg" HeightRequest="80" WidthRequest="80" />
+                    <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                        <Label Text="Panda Panic" FontSize="20" FontAttributes="Bold" />
+                        <Label Text="Quick time events with a calm panda." FontSize="14" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+
+            <Frame CornerRadius="15" HasShadow="True" Padding="15">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBureaucracyTapped" />
+                </Frame.GestureRecognizers>
+                <Grid ColumnDefinitions="100, *" ColumnSpacing="20">
+                    <Image Source="stamp_denied.svg" HeightRequest="80" WidthRequest="80" />
+                    <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                        <Label Text="Bureaucracy Release" FontSize="20" FontAttributes="Bold" />
+                        <Label Text="File a Stress Note into the digital void." FontSize="14" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+
+            <Frame CornerRadius="15" HasShadow="True" Padding="15">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnBaroqueTapped" />
+                </Frame.GestureRecognizers>
+                <Grid ColumnDefinitions="100, *" ColumnSpacing="20">
+                    <Image Source="happy_man.svg" HeightRequest="80" WidthRequest="80" />
+                    <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                        <Label Text="The Venting Machine" FontSize="20" FontAttributes="Bold" />
+                        <Label Text="A fancy gentleman to acknowledge your woes." FontSize="14" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+
+            <Frame CornerRadius="15" HasShadow="True" Padding="15">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnAdviceTapped" />
+                </Frame.GestureRecognizers>
+                <Grid ColumnDefinitions="100, *" ColumnSpacing="20">
+                    <Image Source="meme_shapes.svg" HeightRequest="80" WidthRequest="80" />
+                    <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                        <Label Text="Unsolicited Advice" FontSize="20" FontAttributes="Bold" />
+                        <Label Text="Technically true, practically useless." FontSize="14" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+
+            <Frame CornerRadius="15" HasShadow="True" Padding="15">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnJournalTapped" />
+                </Frame.GestureRecognizers>
+                <Grid ColumnDefinitions="100, *" ColumnSpacing="20">
+                    <Image Source="wreck_journal.svg" HeightRequest="80" WidthRequest="80" />
+                    <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                        <Label Text="Wreck-It Journal" FontSize="20" FontAttributes="Bold" />
+                        <Label Text="Write it down. Watch it burn at midnight." FontSize="14" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+
+            <Frame CornerRadius="15" HasShadow="True" Padding="15">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnScreamTapped" />
+                </Frame.GestureRecognizers>
+                <Grid ColumnDefinitions="100, *" ColumnSpacing="20">
+                    <Image Source="scream_face.svg" HeightRequest="80" WidthRequest="80" />
+                    <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                        <Label Text="Scream Log" FontSize="20" FontAttributes="Bold" />
+                        <Label Text="Track your stress level by screaming." FontSize="14" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

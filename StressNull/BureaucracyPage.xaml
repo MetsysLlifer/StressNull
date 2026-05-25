@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StressNull.BureaucracyPage"
+             Title="Bureaucracy Release"
+             BackgroundColor="#D3D3D3">
+
+    <ScrollView>
+        <Grid Padding="40" RowDefinitions="Auto,Auto,Auto" RowSpacing="30">
+            <Label Text="Bureaucracy Release Form 27B/6"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   FontFamily="Courier"
+                   TextColor="#333333"
+                   HorizontalOptions="Center"
+                   Grid.Row="0"
+                   Margin="0,0,0,20" />
+
+            <VerticalStackLayout Spacing="20" VerticalOptions="Center" Grid.Row="1">
+                <Label x:Name="StatusLabel"
+                       Text="Enter your stress issue below and submit for processing."
+                       FontSize="18"
+                       FontFamily="Courier"
+                       TextColor="#555555"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center" />
+
+                <Editor x:Name="StressEditor"
+                        HeightRequest="150"
+                        AutoSize="TextChanges"
+                        Placeholder="Enter stress here..."
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        FontFamily="Courier" />
+
+                <ActivityIndicator x:Name="ProcessingIndicator"
+                                   IsRunning="False"
+                                   IsVisible="False"
+                                   Color="#333333"
+                                   HorizontalOptions="Center" />
+
+                <VerticalStackLayout x:Name="PermitContainer" IsVisible="False" Spacing="10">
+                    <Label Text="Select Permit Color:" FontFamily="Courier" TextColor="Black" />
+                    <Picker x:Name="PermitPicker" SelectedIndexChanged="OnPermitSelected" BackgroundColor="White" TextColor="Black">
+                        <!-- Added dynamically in code behind -->
+                    </Picker>
+                </VerticalStackLayout>
+
+                <Image x:Name="StampImage"
+                       Source="stamp_denied.svg"
+                       IsVisible="False"
+                       HeightRequest="200"
+                       WidthRequest="200"
+                       HorizontalOptions="Center"
+                       Scale="3"
+                       Opacity="0" />
+                       
+            </VerticalStackLayout>
+
+            <Button x:Name="SubmitButton"
+                    Text="SUBMIT FORM"
+                    Clicked="OnSubmitClicked"
+                    FontSize="18"
+                    FontFamily="Courier"
+                    HeightRequest="60"
+                    CornerRadius="0"
+                    BackgroundColor="#888888"
+                    TextColor="White"
+                    Grid.Row="2" />
+        </Grid>
+    </ScrollView>
+</ContentPage>

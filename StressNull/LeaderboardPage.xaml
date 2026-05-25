@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StressNull.LeaderboardPage"
+             Title="Global Brainrot Leaderboard"
+             BackgroundColor="#F5F5F5">
+
+    <Grid RowDefinitions="Auto, Auto, *">
+        
+        <Label Grid.Row="0" 
+               Text="TOP BRAINROT SCORES" 
+               FontSize="24" FontAttributes="Bold" TextColor="#512BD4"
+               HorizontalOptions="Center" 
+               Margin="0,20,0,10" />
+
+        <HorizontalStackLayout Grid.Row="1" HorizontalOptions="Center" Spacing="10" Margin="0,0,0,20">
+            <Label Text="Filter by mode:" VerticalOptions="Center" FontSize="16" TextColor="#333333" />
+            <Picker x:Name="ModePicker" SelectedIndexChanged="OnModePickerSelectedIndexChanged" WidthRequest="150" TextColor="Black">
+                <Picker.Items>
+                    <x:String>All Modes</x:String>
+                    <x:String>Popcat</x:String>
+                    <x:String>Panda</x:String>
+                    <x:String>Brainrot</x:String>
+                    <x:String>Scream</x:String>
+                    <x:String>Bureaucracy</x:String>
+                    <x:String>Baroque</x:String>
+                    <x:String>Advice</x:String>
+                    <x:String>Journal</x:String>
+                </Picker.Items>
+            </Picker>
+        </HorizontalStackLayout>
+
+        <RefreshView Grid.Row="2" x:Name="LeaderboardRefresh" Refreshing="OnRefreshing">
+            <CollectionView x:Name="LeaderboardCollection" 
+                            EmptyView="No scores found. (Is the server running?)">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="10,5" Padding="15" BackgroundColor="White" BorderColor="LightGray" CornerRadius="10" HasShadow="True">
+                            <Grid ColumnDefinitions="Auto, *, Auto">
+                                <Label Grid.Column="0" 
+                                       Text="{Binding Rank, StringFormat='#{0}'}" 
+                                       TextColor="#512BD4" 
+                                       FontAttributes="Bold" 
+                                       FontSize="18" 
+                                       VerticalOptions="Center" 
+                                       WidthRequest="40" />
+                                       
+                                <VerticalStackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="{Binding Username}" TextColor="Black" FontAttributes="Bold" FontSize="16" />
+                                    <Label Text="{Binding GameMode}" TextColor="Gray" FontSize="12" />
+                                </VerticalStackLayout>
+                                
+                                <Label Grid.Column="2" 
+                                       Text="{Binding Score}" 
+                                       TextColor="#512BD4" 
+                                       FontAttributes="Bold" 
+                                       FontSize="20" 
+                                       VerticalOptions="Center" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StressNull.ScreamLogPage"
+             Title="Daily Scream Log"
+             BackgroundColor="#1A1A1A">
+
+    <Grid Padding="30" RowDefinitions="Auto, *, Auto">
+        
+        <Label Text="DAILY SCREAM LOG"
+               FontSize="28"
+               FontAttributes="Bold"
+               TextColor="#FF3333"
+               HorizontalOptions="Center"
+               Grid.Row="0"
+               Margin="0,0,0,20" />
+
+        <!-- Fake Decibel Meter -->
+        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" Spacing="20">
+            <Label x:Name="InstructionsLabel"
+                   Text="Hold the button and SCREAM to log your stress level."
+                   FontSize="18"
+                   TextColor="#CCCCCC"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+
+            <Frame x:Name="MeterFrame"
+                   HeightRequest="200"
+                   WidthRequest="200"
+                   CornerRadius="100"
+                   BackgroundColor="#333333"
+                   HorizontalOptions="Center">
+                
+                <Label x:Name="DecibelLabel"
+                       Text="0 dB"
+                       FontSize="42"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+            </Frame>
+
+            <Label x:Name="ResultLabel"
+                   Text=""
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="#FFD700"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,0" />
+        </VerticalStackLayout>
+
+        <!-- Scream Button -->
+        <Button x:Name="ScreamButton"
+                Text="HOLD TO SCREAM"
+                FontSize="24"
+                FontAttributes="Bold"
+                HeightRequest="80"
+                CornerRadius="40"
+                BackgroundColor="#FF3333"
+                TextColor="White"
+                Grid.Row="2"
+                Pressed="OnScreamPressed"
+                Released="OnScreamReleased" />
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StressNull.LoginPage"
+             Title="Login"
+             BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30,50" VerticalOptions="Center">
+            
+            <Label Text="Welcome to StressNull" 
+                   FontSize="28" FontAttributes="Bold" TextColor="#512BD4"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Sign in to save your brainrot scores." 
+                   FontSize="16" TextColor="#333333"
+                   HorizontalOptions="Center" 
+                   HorizontalTextAlignment="Center" />
+
+            <Frame BackgroundColor="White" Padding="20" CornerRadius="12" HasShadow="True" BorderColor="LightGray">
+                <VerticalStackLayout Spacing="15">
+                    
+                    <Entry x:Name="UsernameEntry" 
+                           Placeholder="Username" 
+                           TextColor="Black"
+                           PlaceholderColor="Gray"
+                           Keyboard="Text" />
+                    
+                    <Entry x:Name="PasswordEntry" 
+                           Placeholder="Password" 
+                           IsPassword="True" 
+                           TextColor="Black"
+                           PlaceholderColor="Gray" />
+                           
+                    <Label x:Name="ErrorLabel" 
+                           TextColor="Red" 
+                           IsVisible="False" 
+                           HorizontalOptions="Center" />
+                           
+                    <Button Text="Login" 
+                            Clicked="OnLoginClicked" 
+                            BackgroundColor="#512BD4" 
+                            TextColor="White" 
+                            FontAttributes="Bold" 
+                            CornerRadius="10" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+                <Label Text="Don't have an account?" FontSize="14" TextColor="#333333" />
+                <Label Text="Register here." 
+                       TextColor="#512BD4" 
+                       FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRegisterTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

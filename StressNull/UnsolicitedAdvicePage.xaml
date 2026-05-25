@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StressNull.UnsolicitedAdvicePage"
+             Title="Unsolicited Advice"
+             BackgroundColor="#FFE4E1">
+
+    <Grid Padding="40" RowDefinitions="*,Auto,Auto">
+        
+        <!-- The Advice Display -->
+        <Label x:Name="AdviceLabel"
+               Text="Press the button. I know what's best for you."
+               FontSize="28"
+               FontAttributes="Bold"
+               TextColor="#8B0000"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               HorizontalTextAlignment="Center"
+               Grid.Row="0" />
+
+        <!-- Giant Button -->
+        <Button Text="TELL ME WHAT TO DO"
+                Clicked="OnGiveAdviceClicked"
+                FontSize="24"
+                FontAttributes="Bold"
+                HeightRequest="150"
+                CornerRadius="75"
+                BackgroundColor="#8B0000"
+                TextColor="White"
+                Grid.Row="1"
+                Margin="0,20,0,20"/>
+    </Grid>
+</ContentPage>

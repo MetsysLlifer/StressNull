@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StressNull.MainMenuPage"
+             NavigationPage.HasNavigationBar="False"
+             Title="Main Menu"
+             BackgroundColor="#F5F5F5">
+
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Spacing="12" Padding="40" VerticalOptions="Center">
+                
+                <Image x:Name="MemeShapesIcon"
+                       Source="meme_shapes.svg"
+                       HeightRequest="200"
+                       WidthRequest="200"
+                       HorizontalOptions="Center" />
+
+                <Label Text="STRESS NULL"
+                       FontSize="36"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,10" />
+
+                <Button Text="PLAY"
+                        Clicked="OnPlayClicked"
+                        FontSize="18"
+                        HeightRequest="50"
+                        WidthRequest="240"
+                        CornerRadius="12"
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"
+                        TextColor="#512BD4">
+                    <Button.Shadow>
+                        <Shadow Brush="Black" Offset="0,4" Radius="5" Opacity="0.15"/>
+                    </Button.Shadow>
+                </Button>
+
+                <Button Text="LEADERBOARD"
+                        Clicked="OnLeaderboardClicked"
+                        FontSize="18"
+                        HeightRequest="50"
+                        WidthRequest="240"
+                        CornerRadius="12"
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"
+                        TextColor="#512BD4">
+                    <Button.Shadow>
+                        <Shadow Brush="Black" Offset="0,4" Radius="5" Opacity="0.15"/>
+                    </Button.Shadow>
+                </Button>
+
+                <Button Text="SETTINGS"
+                        Clicked="OnSettingsClicked"
+                        FontSize="18"
+                        HeightRequest="50"
+                        WidthRequest="240"
+                        CornerRadius="12"
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"
+                        TextColor="#512BD4">
+                    <Button.Shadow>
+                        <Shadow Brush="Black" Offset="0,4" Radius="5" Opacity="0.15"/>
+                    </Button.Shadow>
+                </Button>
+
+                <Button Text="ABOUT"
+                        Clicked="OnAboutClicked"
+                        FontSize="18"
+                        HeightRequest="50"
+                        WidthRequest="240"
+                        CornerRadius="12"
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"
+                        TextColor="#512BD4">
+                    <Button.Shadow>
+                        <Shadow Brush="Black" Offset="0,4" Radius="5" Opacity="0.15"/>
+                    </Button.Shadow>
+                </Button>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Floating Auth Button (Upper Right Circle Icon) -->
+        <Button x:Name="AuthButton"
+                Text="👤"
+                FontSize="24"
+                Padding="0"
+                WidthRequest="50"
+                HeightRequest="50"
+                CornerRadius="25"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                Margin="0,20,20,0"
+                BackgroundColor="White"
+                TextColor="#512BD4"
+                Clicked="OnAuthClicked">
+            <Button.Shadow>
+                <Shadow Brush="Black" Offset="0,4" Radius="5" Opacity="0.2"/>
+            </Button.Shadow>
+        </Button>
+
+        <!-- Giant Random Quote Overlay -->
+        <Grid x:Name="QuoteOverlay" BackgroundColor="#E6000000" IsVisible="False" InputTransparent="False">
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnQuoteTapped" />
+            </Grid.GestureRecognizers>
+            <Label x:Name="QuoteLabel"
+                   Text="A MASSIVE QUOTE"
+                   FontSize="48"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Margin="20" />
+            <Label Text="Tap to dismiss"
+                   FontSize="16"
+                   TextColor="#AAAAAA"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End"
+                   Margin="0,0,0,40" />
+        </Grid>
+    </Grid>
+</ContentPage>
