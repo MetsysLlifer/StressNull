@@ -25,7 +25,7 @@ public static class MauiProgram
         // Configure HttpClient for the backend API
         // NOTE: Change this base address to your actual hosted API URL when deploying.
         // For local development with a physical device, use the machine's local IP address.
-        string baseAddress = "http://192.168.1.18:5112/";
+        string baseAddress = "https://stressnull.onrender.com/";
         
         builder.Services.AddHttpClient<ApiService>(client =>
         {
