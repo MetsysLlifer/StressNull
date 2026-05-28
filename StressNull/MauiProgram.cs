@@ -23,9 +23,8 @@ public static class MauiProgram
 #endif
 
         // Configure HttpClient for the backend API
-        // NOTE: Change this base address to your actual hosted API URL when deploying.
-        // For local development with a physical device, use the machine's local IP address.
-        string baseAddress = "https://stressnull.onrender.com/";
+        // NOTE: Replace 'your-app-name' with the actual subdomain provided by Back4App once deployed.
+        string baseAddress = "https://your-app-name.b4a.run/";
         
         builder.Services.AddHttpClient<ApiService>(client =>
         {
