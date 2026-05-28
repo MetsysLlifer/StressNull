@@ -39,7 +39,8 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
+// In production behind cloud load balancers (Render/Railway), HTTPS is handled by the provider.
+// app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
