@@ -2,14 +2,14 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
 # Copy csproj and restore dependencies
-COPY ["StressNull.Api.csproj", "./"]
-RUN dotnet restore "./StressNull.Api.csproj"
+COPY ["StressNull.Api/StressNull.Api.csproj", "StressNull.Api/"]
+RUN dotnet restore "StressNull.Api/StressNull.Api.csproj"
 
 # Copy the remaining source code
 COPY . .
 
 # Build and publish
-RUN dotnet publish "StressNull.Api.csproj" -c Release -o /app/publish
+RUN dotnet publish "StressNull.Api/StressNull.Api.csproj" -c Release -o /app/publish
 
 # Build the runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
